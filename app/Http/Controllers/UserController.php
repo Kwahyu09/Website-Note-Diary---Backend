@@ -15,6 +15,14 @@ class UserController extends Controller
     public function index()
     {
         $user_data = User::with('roles')->latest()->get();
+
+        if ($user_data->isEmpty()) {
+            return response()->json([
+                "status_code" => 200,
+                "message" => "Data User masih kosong!"
+            ], 200);
+        }
+
         $user_data = $user_data->map(function($user){
             return [
                 'id' => $user->id,
