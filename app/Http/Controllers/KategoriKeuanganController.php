@@ -28,7 +28,7 @@ class KategoriKeuanganController extends Controller
         return response()->json([
             'status_code' => 200,
             'message' => "Data Kategori Keuangan",
-            'data_user' => $data
+            'data' => $data
         ], 200);
     }
 
@@ -48,13 +48,18 @@ class KategoriKeuanganController extends Controller
     public function show($id)
     {
         $kategori = KategoriKeuangan::find($id);
-        if (!$kategori) {
-            return response()->json(['message' => 'Data Kategori Keuangan tidak ditemukan.'], 200);
+
+        //Cek data
+        if(empty($kategori)){
+            return response()->json([
+                'status_code' => 200,
+                'message' => 'Data Kategori Keuangan tidak ditemukan!'
+            ], 200);
         }
         return response()->json([
             'status_code' => 200,
             'message' => "Data Kategori Keuangan Ditemukan",
-            'data_user' => $kategori
+            'data' => $kategori
         ], 200);
     }
 

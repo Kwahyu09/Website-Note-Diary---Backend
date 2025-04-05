@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KategoriKeuanganController;
+use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     //kategori keuangan
     Route::apiResource('kategori', KategoriKeuanganController::class);
+
+    //keuangan
+    Route::apiResource('keuangan', KeuanganController::class);
 });
