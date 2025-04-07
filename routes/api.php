@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KategoriKeuanganController;
 use App\Http\Controllers\KeuanganController;
+use App\Http\Controllers\RekapBulananController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     //keuangan
     Route::apiResource('keuangan', KeuanganController::class);
+
+    //rekap
+    Route::post('rekap/simpan', [RekapBulananController::class, 'hitungRekap']);
+    Route::get('grafik/kategori', [RekapBulananController::class, 'grafikKategori']);
+    Route::get('saldo', [RekapBulananController::class, 'getRingkasanKeuangan']);
 });

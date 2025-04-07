@@ -17,6 +17,7 @@ class KategorikeuanganSeeder extends Seeder
             ['name' => 'Gaji', 'jenis' => 'masuk'],
             ['name' => 'Bonus', 'jenis' => 'masuk'],
             ['name' => 'Freelance', 'jenis' => 'masuk'],
+            ['name' => 'Pemasukan Lainnya', 'jenis' => 'masuk'],
             ['name' => 'Makan', 'jenis' => 'keluar'],
             ['name' => 'Minum', 'jenis' => 'keluar'],
             ['name' => 'Transportasi', 'jenis' => 'keluar'],
